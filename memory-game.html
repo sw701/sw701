@@ -151,6 +151,14 @@
             updateScore(score); // Update the score display
 
             resetBoard();
+
+            // Check if all cards are matched
+            const allMatched = document.querySelectorAll('.memory-card:not(.flip)').length === 0;
+            if (allMatched) {
+                setTimeout(() => {
+                    alert('You Won!'); // Display "You Won" message
+                }, 500);
+            }
         }
 
         function unflipCards() {
